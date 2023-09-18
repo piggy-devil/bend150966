@@ -1,17 +1,17 @@
 import express from 'express';
 import {
-    createProject,
-    deleteProject,
-    getProject,
-    getProjects,
-    updateProject
+    createProjectHandler,
+    deleteProjectHandler,
+    getProjectHandler,
+    getProjectsHandler,
+    updateProjectHandler
 } from '../controllers/project.controller';
 
 export default (router: express.Router) => {
-    router.get('/api/projects', getProjects).post('/api/projects', createProject);
+    router.get('/api/projects', getProjectsHandler).post('/api/projects', createProjectHandler);
 
     router
-        .get('/api/projects/:id', getProject)
-        .put('/api/projects/:id', updateProject)
-        .delete('/api/projects/:id', deleteProject);
+        .get('/api/projects/:id', getProjectHandler)
+        .put('/api/projects/:id', updateProjectHandler)
+        .delete('/api/projects/:id', deleteProjectHandler);
 };
