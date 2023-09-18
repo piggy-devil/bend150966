@@ -5,7 +5,7 @@ import {
     getProject,
     getProjects,
     updateProject
-} from '../controller/project.controller';
+} from '../controllers/project.controller';
 
 export default (router: express.Router) => {
     router.get('/api/projects', getProjects).post('/api/projects', createProject);
